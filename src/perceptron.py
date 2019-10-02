@@ -21,31 +21,6 @@ def get_images(filename):
             vectors.append([1.0 if float(v) == 1 else -1.0 for v in line.strip().split(',')])
     return vectors
 
-class NearestNeighbor:
-
-    def __init__(self, image_file, character_file):
-        vectors = get_images(image_file)
-        characters = get_characters(character_file)
-        self.data = [{"x": vector, "y":  character} for (vector, character) in zip(vectors, characters)]
-
-    def test(self):
-        min_distance = math.inf
-        success = 0
-        failure = 0
-        total = 0
-        for testing_datum in self.data[5000:]:
-            for training_datum in self.data[:5000]:
-                cur_distance = distance.euclidean(training_datum["x"], testing_datum["x"])
-                if cur_distance < min_distance:
-                    min_distance = cur_distance
-                    nearest_neighbor = training_datum["y"]
-            if nearest_neighbor == testing_datum["y"]:
-                success += 1
-            else:
-                failure += 1
-            total += 1
-
-        return float(success) / total
 
 class Perceptron:
 
