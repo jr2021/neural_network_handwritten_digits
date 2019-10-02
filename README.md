@@ -5,7 +5,7 @@ At [The University of Helsinki](https://www.helsinki.fi/en) I leveraged the [Per
 ## Languages and Frameworks
 
 * [Python](https://www.python.org/)
-* [numpy](https://numpy.org/)
+* [NumPy](https://numpy.org/)
 
 ## Acknowledgements
 
